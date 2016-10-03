@@ -2,11 +2,12 @@ package tat.bsu.homework.lesson1.task3;
 
 /**
  *
- *      Performs computational operations.
+ * Performs computational operations.
  *
  * @version 1.02
- *      3 Oct 2016
- * @author Eugeny Titenkov  */
+ * @since 3 Oct 2016
+ * @author Eugeny Titenkov
+ */
 public class Calculator {
     /**
      * Calculate sum, subtraction, multiplication, division,

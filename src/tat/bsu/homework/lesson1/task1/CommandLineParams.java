@@ -2,11 +2,12 @@ package tat.bsu.homework.lesson1.task1;
 
 /**
  *
- *      Inverse print of command line parameters.
+ * Inverse print of command line parameters.
  *
  * @version 1.02
- *      3 Oct 2016
- * @author Eugeny Titenkov  */
+ * @since 3 Oct 2016
+ * @author Eugeny Titenkov
+ */
 public class CommandLineParams {
     /**
      * Reverse print mode parameters.
