@@ -14,6 +14,7 @@ public class QuadraticEquation {
     private double a;
     private double b;
     private double c;
+
     /**
      * Constructor of quadratic equation.
      * @param a - first coefficient.
@@ -25,6 +26,7 @@ public class QuadraticEquation {
         this.b = b;
         this.c = c;
     }
+
     /**
      * Find the roots, and print they.
      */
@@ -36,30 +38,18 @@ public class QuadraticEquation {
             double x1 = (-b + sqrdDiscriminant) / (2 * a);
             double x2 = (-b - sqrdDiscriminant) / (2 * a);
 
-            if (verification(x1) && verification(x2)) {
+            if (ParametersChecker.verification(x1) && ParametersChecker.verification(x2)) {
                 System.out.println("Find two root. X1 = " + x1 +
                         " X2 = " + x2 + ".");
             }
         } else if (discriminant.equals(0.0)) {
             double x = -b / (2 * a);
 
-            if (verification(x)) {
+            if (ParametersChecker.verification(x)) {
                 System.out.println("Find one root. X1 = " + x + ".");
             }
         } else if (discriminant < 0) {
             System.out.println("Discriminant < 0. No real roots.");
-        }
-    }
-    /**
-     * Verify value on NaN and infinite.
-     * @param value - value to test.
-     */
-    private boolean verification(double value) {
-        if (Double.isNaN(value) || Double.isInfinite(value)){
-            System.err.println("Detected division by zero");
-            return false;
-        } else {
-            return true;
         }
     }
 }

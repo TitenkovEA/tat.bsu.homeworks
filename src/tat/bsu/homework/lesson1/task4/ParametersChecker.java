@@ -29,6 +29,7 @@ public class ParametersChecker {
 
         return true;
     }
+
     /**
      * Convert string parameters to double, with checking on numbers format.
      * @param array - string parameters.
@@ -45,8 +46,26 @@ public class ParametersChecker {
 
                 return new double[0];
             }
+
+            if (!verification(parametersInDouble[i])) {
+
+                return new double[0];
+            }
         }
 
         return parametersInDouble;
+    }
+
+    /**
+     * Verify value on NaN and infinite.
+     * @param value - value to test.
+     */
+    public static boolean verification(double value) {
+        if (Double.isNaN(value) || Double.isInfinite(value)){
+            System.err.println("Detected NaN or Infinity!");
+            return false;
+        } else {
+            return true;
+        }
     }
 }

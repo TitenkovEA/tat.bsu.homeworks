@@ -35,7 +35,11 @@ public class Main {
             return;
         }
 
-        Triangle triangle = new Triangle(sideA, sideB, sideC);
-        triangle.printInfo();
+        if (Double.isInfinite(sideA) || Double.isInfinite(sideB) || Double.isInfinite(sideC)) {
+            System.out.println("Wrong length of side");
+        } else {
+            Triangle triangle = new Triangle(sideA, sideB, sideC);
+            triangle.printInfo();
+        }
     }
 }

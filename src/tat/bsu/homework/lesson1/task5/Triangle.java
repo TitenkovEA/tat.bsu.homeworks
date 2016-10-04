@@ -14,6 +14,7 @@ public class Triangle {
     private double sideA;
     private double sideB;
     private double sideC;
+
     /**
      * Constructor of triangle.
      * @param sideA - side A.
@@ -25,6 +26,7 @@ public class Triangle {
         this.sideB = sideB;
         this.sideC = sideC;
     }
+
     /**
      * Print information about a triangle, with verification.
      */
@@ -39,6 +41,7 @@ public class Triangle {
             }
         }
     }
+
     /**
      * Check triangle on building.
      */

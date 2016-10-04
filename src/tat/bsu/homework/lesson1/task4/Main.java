@@ -16,11 +16,15 @@ public class Main {
      */
     public static void main(String[] args) {
         double[] coefficients = ParametersChecker.convertParametersToDouble(args);
+        int size = 3;
 
-        if (ParametersChecker.sizeCheck(3, coefficients)) {
-            QuadraticEquation quadraticEquation = new QuadraticEquation(coefficients[0],
-                    coefficients[1], coefficients[2]);
+        if (ParametersChecker.sizeCheck(size, coefficients)) {
+            double coefficientA = coefficients[0];
+            double coefficientB = coefficients[1];
+            double coefficientC = coefficients[2];
 
+            QuadraticEquation quadraticEquation = new QuadraticEquation(coefficientA,
+                    coefficientB, coefficientC);
             quadraticEquation.findTheRoots();
         }
     }
