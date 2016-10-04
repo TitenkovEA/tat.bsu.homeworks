@@ -1,10 +1,9 @@
 package tat.bsu.homework.lesson1.task4;
 
 /**
- *
  * Print on display roots of quadratic equation.
  *
- * @version 1.00
+ * @version 2.00
  * @since 4 Oct 2016
  * @author Eugeny Titenkov
  */

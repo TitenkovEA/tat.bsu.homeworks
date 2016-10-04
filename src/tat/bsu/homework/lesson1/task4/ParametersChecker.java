@@ -1,10 +1,9 @@
 package tat.bsu.homework.lesson1.task4;
 
 /**
- *
  * Checks a command line parameters.
  *
- * @version 1.00
+ * @version 2.00
  * @since 4 Oct 2016
  * @author Eugeny Titenkov
  */
@@ -43,12 +42,10 @@ public class ParametersChecker {
             } catch (NumberFormatException e) {
                 System.err.print("Number format error! \n" +
                         "Please, enter the numbers in the parameters. \n");
-
                 return new double[0];
             }
 
-            if (!verification(parametersInDouble[i])) {
-
+            if (!verify(parametersInDouble[i])) {
                 return new double[0];
             }
         }
@@ -60,7 +57,7 @@ public class ParametersChecker {
      * Verify value on NaN and infinite.
      * @param value - value to test.
      */
-    public static boolean verification(double value) {
+    public static boolean verify(double value) {
         if (Double.isNaN(value) || Double.isInfinite(value)){
             System.err.println("Detected NaN or Infinity!");
             return false;

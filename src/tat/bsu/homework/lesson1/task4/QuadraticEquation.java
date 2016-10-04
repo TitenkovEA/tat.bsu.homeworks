@@ -1,11 +1,10 @@
 package tat.bsu.homework.lesson1.task4;
 
 /**
- *
  * Model of quadratic equation.
  * With method of finding the roots.
  *
- * @version 1.00
+ * @version 2.00
  * @since 4 Oct 2016
  * @author Eugeny Titenkov
  */
@@ -38,14 +37,14 @@ public class QuadraticEquation {
             double x1 = (-b + sqrdDiscriminant) / (2 * a);
             double x2 = (-b - sqrdDiscriminant) / (2 * a);
 
-            if (ParametersChecker.verification(x1) && ParametersChecker.verification(x2)) {
+            if (ParametersChecker.verify(x1) && ParametersChecker.verify(x2)) {
                 System.out.println("Find two root. X1 = " + x1 +
                         " X2 = " + x2 + ".");
             }
         } else if (discriminant.equals(0.0)) {
             double x = -b / (2 * a);
 
-            if (ParametersChecker.verification(x)) {
+            if (ParametersChecker.verify(x)) {
                 System.out.println("Find one root. X1 = " + x + ".");
             }
         } else if (discriminant < 0) {

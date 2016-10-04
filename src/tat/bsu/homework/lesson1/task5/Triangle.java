@@ -1,11 +1,10 @@
 package tat.bsu.homework.lesson1.task5;
 
 /**
- *
  * Model of triangle.
  * With method of short information, about the triangle.
  *
- * @version 1.00
+ * @version 2.00
  * @since 4 Oct 2016
  * @author Eugeny Titenkov
  */
@@ -28,10 +27,10 @@ public class Triangle {
     }
 
     /**
-     * Print information about a triangle, with verification.
+     * Print information about a triangle, with verify.
      */
     public void printInfo() {
-        if (verification()) {
+        if (verify()) {
             if ((sideA == sideB && sideA == sideC)) {
                 System.out.println("Triangle is equilateral");
             } else if (sideA == sideB || sideB == sideC || sideC == sideA) {
@@ -45,7 +44,7 @@ public class Triangle {
     /**
      * Check triangle on building.
      */
-    private boolean verification(){
+    private boolean verify(){
         if ((sideB + sideC) > sideA && (sideA + sideC) > sideB && (sideA + sideB) > sideC) {
             return true;
         } else {
