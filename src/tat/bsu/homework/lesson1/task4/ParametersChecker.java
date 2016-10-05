@@ -17,15 +17,12 @@ public class ParametersChecker {
         if (parameters.length > size) {
             System.err.print("A lot of input parameters! \n" +
                     "Please, enter " + size + " numbers in the parameters. \n");
-
             return false;
         } else if (parameters.length < size) {
             System.err.print("Array index out error! \n" +
                     "Please, enter " + size + " numbers in the parameters. \n");
-
             return false;
         }
-
         return true;
     }
 
@@ -44,7 +41,6 @@ public class ParametersChecker {
                         "Please, enter the numbers in the parameters. \n");
                 return new double[0];
             }
-
             if (!verify(parametersInDouble[i])) {
                 return new double[0];
             }
