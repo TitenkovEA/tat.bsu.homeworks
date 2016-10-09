@@ -20,4 +20,14 @@ public class WithoutNumbersRule implements Rule {
     public boolean checkRule(String string) {
         return string.matches(RegularExpressions.WITHOUT_NUMBERS_REGEX);
     }
+
+    /**
+     * Return success message.
+     *
+     * @return string that contain success message.
+     */
+    @Override
+    public String getSuccessMessage() {
+        return "Your text not contain numbers.";
+    }
 }

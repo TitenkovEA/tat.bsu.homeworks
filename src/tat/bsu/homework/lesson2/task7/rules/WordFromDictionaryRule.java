@@ -28,4 +28,14 @@ public class WordFromDictionaryRule implements Rule {
         }
         return false;
     }
+
+    /**
+     * Return success message.
+     *
+     * @return string that contain success message.
+     */
+    @Override
+    public String getSuccessMessage() {
+        return "Your text contain word or words from dictionary.";
+    }
 }

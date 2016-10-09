@@ -20,13 +20,21 @@ public class MoreFiveWordsRule implements Rule {
     @Override
     public boolean checkRule(String string) {
         int countOfWords = 0;
-
         for (String str : RuleUtil.divideOnWords(string)) {
             if (!str.matches(RegularExpressions.ONLY_NUMBERS_REGEX)) {
                 countOfWords++;
             }
         }
-
         return countOfWords > 5;
+    }
+
+    /**
+     * Return success message.
+     *
+     * @return string that contain success message.
+     */
+    @Override
+    public String getSuccessMessage() {
+        return "Your text contain more than five words.";
     }
 }

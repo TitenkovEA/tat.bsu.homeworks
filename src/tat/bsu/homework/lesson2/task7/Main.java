@@ -1,10 +1,10 @@
 package tat.bsu.homework.lesson2.task7;
 
-import tat.bsu.homework.lesson2.task7.rules.MoreFiveWordsRule;
-import tat.bsu.homework.lesson2.task7.rules.OnlyNumbersRule;
-import tat.bsu.homework.lesson2.task7.rules.WithoutNumbersRule;
-import tat.bsu.homework.lesson2.task7.rules.WordFromDictionaryRule;
+import tat.bsu.homework.lesson2.task7.rules.*;
 import tat.bsu.homework.lesson2.task7.utils.FromKeyboardReader;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Contains application entry point.
@@ -24,21 +24,28 @@ public class Main {
     public static void main(String[] args) {
         try {
             String string = FromKeyboardReader.stringRead();
-            if (new WithoutNumbersRule().checkRule(string)) {
-                System.out.println("Your text not contain numbers.");
-            }
-            if (new OnlyNumbersRule().checkRule(string)) {
-                System.out.println("Your text contain only numbers.");
-            }
-            if (new MoreFiveWordsRule().checkRule(string)) {
-                System.out.println("Your text contain more than five words.");
-            }
-            if (new WordFromDictionaryRule().checkRule(string)) {
-                System.out.println("Your text contain word or words from dictionary.");
+            for (Rule rule : getRules()) {
+                if (rule.checkRule(string)) {
+                    System.out.println(rule.getSuccessMessage());
+                }
             }
         } catch (Exception e) {
             System.err.println("Unrecognized error: " + e.getMessage());
             System.exit(GENERIC_ERROR);
         }
+    }
+
+    /**
+     * Create list with four different rules.
+     *
+     * @return list with four different rules.
+     */
+    private static List<Rule> getRules() {
+        List<Rule> rules = new ArrayList<Rule>();
+        rules.add(new WithoutNumbersRule());
+        rules.add(new OnlyNumbersRule());
+        rules.add(new MoreFiveWordsRule());
+        rules.add(new WordFromDictionaryRule());
+        return rules;
     }
 }

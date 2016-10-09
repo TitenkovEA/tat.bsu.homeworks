@@ -20,4 +20,14 @@ public class OnlyNumbersRule implements Rule {
     public boolean checkRule(String string) {
         return string.matches(RegularExpressions.ONLY_NUMBERS_REGEX);
     }
+
+    /**
+     * Return success message.
+     *
+     * @return string that contain success message.
+     */
+    @Override
+    public String getSuccessMessage() {
+        return "Your text contain only numbers.";
+    }
 }

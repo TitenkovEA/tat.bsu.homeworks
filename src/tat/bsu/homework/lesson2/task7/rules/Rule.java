@@ -15,4 +15,11 @@ public interface Rule {
      * @return true if the string compliance with rule, else false.
      */
     public boolean checkRule(String string);
+
+    /**
+     * Return success message.
+     *
+     * @return string that contain success message.
+     */
+    public String getSuccessMessage();
 }
