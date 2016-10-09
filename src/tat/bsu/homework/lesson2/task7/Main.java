@@ -4,6 +4,7 @@ import tat.bsu.homework.lesson2.task7.rules.MoreFiveWordsRule;
 import tat.bsu.homework.lesson2.task7.rules.OnlyNumbersRule;
 import tat.bsu.homework.lesson2.task7.rules.WithoutNumbersRule;
 import tat.bsu.homework.lesson2.task7.rules.WordFromDictionaryRule;
+import tat.bsu.homework.lesson2.task7.utils.FromKeyboardReader;
 
 /**
  * Contains application entry point.

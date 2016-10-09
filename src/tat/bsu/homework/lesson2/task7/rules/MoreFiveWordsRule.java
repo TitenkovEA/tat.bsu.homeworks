@@ -1,6 +1,7 @@
 package tat.bsu.homework.lesson2.task7.rules;
 
 import tat.bsu.homework.lesson2.task7.RegularExpressions;
+import tat.bsu.homework.lesson2.task7.utils.RuleUtil;
 
 /**
  * Represents rule, where string must contain more than five word.

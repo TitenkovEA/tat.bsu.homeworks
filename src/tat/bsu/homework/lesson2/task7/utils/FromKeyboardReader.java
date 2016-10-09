@@ -1,4 +1,4 @@
-package tat.bsu.homework.lesson2.task7;
+package tat.bsu.homework.lesson2.task7.utils;
 
 import java.io.BufferedReader;
 import java.io.IOException;

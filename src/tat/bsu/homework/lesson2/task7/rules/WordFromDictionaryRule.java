@@ -1,6 +1,7 @@
 package tat.bsu.homework.lesson2.task7.rules;
 
 import tat.bsu.homework.lesson2.task7.Dictionary;
+import tat.bsu.homework.lesson2.task7.utils.RuleUtil;
 
 /**
  * Represents rule, where string must contain one or more words from dictionary.
@@ -19,7 +20,7 @@ public class WordFromDictionaryRule implements Rule {
     @Override
     public boolean checkRule(String string) {
         for (String wordFromString : RuleUtil.divideOnWords(string)) {
-            for (String wordFromDictionary : Dictionary.dictionary) {
+            for (String wordFromDictionary : Dictionary.getDictionary()) {
                 if (wordFromString.equals(wordFromDictionary)) {
                     return true;
                 }

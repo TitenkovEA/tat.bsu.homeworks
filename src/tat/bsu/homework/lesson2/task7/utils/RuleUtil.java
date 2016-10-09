@@ -1,4 +1,4 @@
-package tat.bsu.homework.lesson2.task7.rules;
+package tat.bsu.homework.lesson2.task7.utils;
 
 import tat.bsu.homework.lesson2.task7.RegularExpressions;
 

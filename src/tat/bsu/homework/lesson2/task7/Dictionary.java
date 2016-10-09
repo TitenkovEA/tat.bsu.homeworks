@@ -1,6 +1,7 @@
 package tat.bsu.homework.lesson2.task7;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Contains user dictionary.
@@ -10,12 +11,21 @@ import java.util.ArrayList;
  * @since 9 Oct 2016
  */
 abstract public class Dictionary {
-    public static ArrayList<String> dictionary = new ArrayList<String>();
+    private static List<String> dictionary = new ArrayList<String>();
 
     static {
         dictionary.add("I");
         dictionary.add("love");
         dictionary.add("my");
         dictionary.add("job");
+    }
+
+    /**
+     * Return dictionary list.
+     *
+     * @return List dictionary.
+     */
+    public static List<String> getDictionary() {
+        return dictionary;
     }
 }
