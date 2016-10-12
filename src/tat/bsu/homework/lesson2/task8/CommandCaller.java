@@ -13,7 +13,7 @@ import java.util.Scanner;
  * @author Eugeny Titenkov
  */
 public class CommandCaller {
-    private ArrayList<Command> commands = new ArrayList<Command>();
+    private List<Command> commands = new ArrayList<Command>();
 
     /**
      * Add command to commands list.

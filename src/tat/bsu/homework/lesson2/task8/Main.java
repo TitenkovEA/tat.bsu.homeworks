@@ -21,7 +21,7 @@ public class Main {
     public static void main(String[] args) {
         try {
             ProductListBuilder productListBuilder = new ProductListBuilder();
-            productListBuilder.BuildListProducts();
+            productListBuilder.buildListProducts();
             CommandCaller commandCaller = new CommandCaller().add(new CountAllCommand())
                     .add(new CountTypesCommand())
                     .add(new AveragePriceCommand())

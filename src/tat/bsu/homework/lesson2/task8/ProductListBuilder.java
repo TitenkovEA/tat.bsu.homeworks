@@ -17,7 +17,7 @@ public class ProductListBuilder {
     /**
      * It creates list of products, filling them with the keyboard.
      */
-    public void BuildListProducts() {
+    public void buildListProducts() {
         Scanner scanner = new Scanner(System.in);
         String continueMessage = "y";
         do {
