@@ -31,7 +31,7 @@ public class HtmlTableBuilder {
     public String buildHtmlTable(HtmlTableRowStorage htmlTableRowStorage) {
         StringBuilder htmlTable = new StringBuilder();
         htmlTable.append(HEAD_TABLE);
-        for (String tableRow : htmlTableRowStorage.getHtmlTableRows()) {
+        for (String tableRow : htmlTableRowStorage.getHtmlServerEntryRows()) {
             htmlTable.append(tableRow);
         }
         htmlTable.append(END_TABLE);

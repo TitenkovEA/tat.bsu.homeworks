@@ -1,7 +1,6 @@
 package tat.bsu.homework.lesson3.task9;
 
 import java.io.File;
-import java.io.IOException;
 import java.io.PrintWriter;
 import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
@@ -21,16 +20,13 @@ public class Main {
      * then builds a html table and creates html file with the table.
      *
      * @param args - command line parameters.
-     * @throws IOException - for PrintWriter,
-     *                     some of its constructors may throw I/O exceptions.
      */
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         try {
             File[] files = new File(CURRENT_PATH).listFiles();
             SimpleDateFormat sdf = new SimpleDateFormat("MM.dd.yyyy");
             HtmlTableRowStorage htmlTableRowStorage = new HtmlTableRowStorage();
             for (File file : files) {
-
                 if (file.isFile()) {
                     htmlTableRowStorage.addFileInformation(new FileInformation(file.getName(), "FILE",
                             sdf.format(file.lastModified()), byteToKilobyte(file.length())));
