@@ -7,20 +7,18 @@ package tat.bsu.homework.lesson3.task10;
  */
 public class HtmlTableBuilder {
     private final static String HEAD_TABLE =
-            "<html> \n" +
-                    " <head> \n" +
-                    "  <meta charset=\"utf-8\"> \n" +
-                    " </head> \n" +
-                    " <body> \n" +
-                    "  <table> \n" +
-                    "   <tr bgcolor = \"#999999\" height=\"40\" align=\"center\"> \n" +
-                    "     <th width=\"400\"><font size=\"4\" face=\"Arial\"><strong>Server</strong></font></th> \n" +
-                    "     <th width=\"400\"><font size=\"4\" face=\"Arial\"><strong>Response, ms</strong></font></th> \n" +
-                    "   </tr> \n";
+            "<html> \n" + " <head> \n" + "  <meta charset=\"utf-8\"> \n" +
+            " </head> \n" +
+            " <body> \n" +
+            "  <table> \n" +
+            "   <tr bgcolor = \"#999999\" height=\"40\" align=\"center\"> \n" +
+            "    <th width=\"400\"><font size=\"4\" face=\"Arial\"><strong>Server</strong></font></th> \n" +
+            "    <th width=\"400\"><font size=\"4\" face=\"Arial\"><strong>Response, ms</strong></font></th> \n" +
+            "   </tr> \n";
     private final static String END_TABLE =
             "  </table> \n" +
-                    " </body> \n" +
-                    "</html>";
+            " </body> \n" +
+            "</html>";
 
     /**
      * Creates html table.

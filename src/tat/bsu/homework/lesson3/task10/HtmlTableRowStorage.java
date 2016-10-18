@@ -35,15 +35,13 @@ public class HtmlTableRowStorage {
         boolean switchColor = true;
         for (HtmlServerEntryRow htmlServerEntryRow : htmlServerEntryRows) {
             if (htmlServerEntryRow.getResponseTime() == maxMs) {
-                htmlRows.add(htmlServerEntryRow.getHtmlServerEntryRow(HtmlServerEntryRow.RED_ROW_COLOR));
+                htmlRows.add(htmlServerEntryRow.getHtmlServerEntryRow(
+                        HtmlServerEntryRow.RED_ROW_COLOR));
             } else {
-                if (switchColor) {
-                    htmlRows.add(htmlServerEntryRow.getHtmlServerEntryRow(HtmlServerEntryRow.FIRST_GREY_ROW_COLOR));
-                    switchColor = false;
-                } else {
-                    htmlRows.add(htmlServerEntryRow.getHtmlServerEntryRow(HtmlServerEntryRow.SECOND_GREY_ROW_COLOR));
-                    switchColor = true;
-                }
+                htmlRows.add(htmlServerEntryRow.getHtmlServerEntryRow(
+                        switchColor ? HtmlServerEntryRow.FIRST_GREY_ROW_COLOR :
+                                      HtmlServerEntryRow.SECOND_GREY_ROW_COLOR));
+                switchColor = !switchColor;
             }
         }
         return htmlRows;

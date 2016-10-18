@@ -31,16 +31,13 @@ public class Main {
             HtmlTableRowStorage htmlTableRowStorage = new HtmlTableRowStorage();
             if (args.length > 0) {
                 ipAddresses = args;
-                if (Validator.validateIpAddresses(ipAddresses)) {
-                    htmlTableRowStorage = fillHtmlTableRowStorage(ipAddresses);
-                } else {
-                    System.err.println(WRONG_IP);
-                }
             } else {
                 ipAddresses = readFile();
-                if (Validator.validateIpAddresses(ipAddresses)) {
-                    htmlTableRowStorage = fillHtmlTableRowStorage(ipAddresses);
-                }
+            }
+            if (Validator.validateIpAddresses(ipAddresses)) {
+                htmlTableRowStorage = fillHtmlTableRowStorage(ipAddresses);
+            } else {
+                System.err.println(WRONG_IP);
             }
             String htmlTable = new HtmlTableBuilder().buildHtmlTable(htmlTableRowStorage);
             createHtmlTableFile(htmlTable);
