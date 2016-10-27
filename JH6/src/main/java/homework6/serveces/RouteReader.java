@@ -2,7 +2,6 @@ package homework6.serveces;
 
 import homework6.ErrorMessages;
 import homework6.beans.Checkpoint;
-
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -11,9 +10,17 @@ import java.util.IllegalFormatException;
 import java.util.List;
 
 /**
- * Created by Я on 26.10.2016.
+ * Represents route reader.
+ *
+ * @author Eugeny Titenkov
  */
 public class RouteReader {
+    /**
+     * Read route from file.
+     *
+     * @param filePath - path to file.
+     * @return list of checkpoints(route).
+     */
     public List<Checkpoint> readRouteFromFile(String filePath) {
         List<Checkpoint> route = new ArrayList<Checkpoint>();
         try {
