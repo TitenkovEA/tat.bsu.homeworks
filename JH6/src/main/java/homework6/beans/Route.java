@@ -75,7 +75,7 @@ public class Route {
      *
      * @return object of traveling.
      */
-    public Traveling createMovement() {
+    public Traveling createTraveling() {
         return new Traveling();
     }
 }

@@ -28,7 +28,7 @@ public class CarMovement extends InternalCombustionEngineMovement {
      */
     @Override
     public BigDecimal getPriceResult(Route route) {
-        Route.Traveling traveling = route.createMovement();
+        Route.Traveling traveling = route.createTraveling();
         double distance = 0.0;
         while (traveling.moveToNextPoint()) {
             distance += traveling.getDistance();

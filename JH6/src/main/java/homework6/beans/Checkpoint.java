@@ -38,4 +38,23 @@ public class Checkpoint {
     public double getY() {
         return y;
     }
+
+    /**
+     * Compares the objects.
+     *
+     * @param object - object of comparison.
+     * @return true object the same, else false.
+     */
+    @Override
+    public boolean equals(Object object) {
+        if (this == object) return true;
+        if (object == null || getClass() != object.getClass()) return false;
+
+        Checkpoint that = (Checkpoint) object;
+
+        if (Double.compare(that.x, x) != 0) return false;
+        if (Double.compare(that.y, y) != 0) return false;
+
+        return true;
+    }
 }

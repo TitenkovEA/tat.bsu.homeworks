@@ -30,7 +30,7 @@ public abstract class Movement {
      * @return time in ms type of long.
      */
     public long getTimeResult(Route route) {
-        Route.Traveling traveling = route.createMovement();
+        Route.Traveling traveling = route.createTraveling();
         double distance = 0.0;
         while (traveling.moveToNextPoint()) {
             distance += traveling.getDistance();
@@ -54,5 +54,14 @@ public abstract class Movement {
      */
     public String getName() {
         return name;
+    }
+
+    /**
+     * Return speed of movement.
+     *
+     * @return speed of movement.
+     */
+    public double getSpeed() {
+        return speed;
     }
 }
