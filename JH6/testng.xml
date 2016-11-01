@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Test_Movements_Suite">
+    <test name="FootMovement_Test" preserve-order="true">
+        <classes>
+            <class name="testng.homework6.bins.FootMovementTest">
+                <methods>
+                    <exclude name="positiveGetTimeResult(java.util.ArrayList, long)"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="BicycleMovement_Test" preserve-order="true">
+        <classes>
+            <class name="testng.homework6.bins.BicycleMovementTest">
+                <methods>
+                    <exclude name="positiveGetTimeResult(java.util.ArrayList, long)"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="CarMovement_Test" preserve-order="true">
+        <classes>
+            <class name="testng.homework6.bins.CarMovementTest">
+                <methods>
+                    <exclude name="positiveGetTimeResult(java.util.ArrayList, long)"/>
+                    <exclude name="positiveGetPriceResult(java.util.ArrayList, java.math.BigDecimal)"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="BusMovement_Test" preserve-order="true">
+        <classes>
+            <class name="testng.homework6.bins.BusMovementTest">
+                <methods>
+                    <exclude name="positiveGetTimeResult(java.util.ArrayList, long)"/>
+                    <exclude name="positiveGetPriceResult(java.util.ArrayList, java.math.BigDecimal)"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

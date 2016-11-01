@@ -31,9 +31,10 @@ public class FootMovement extends Movement {
 
     /**
      * Return price of travel, depending on route.
+     * On foot movement it always will be zero.
      *
      * @param route - route.
-     * @return price type of BidDecimal.
+     * @return price type of BidDecimal, on foot movement it always will be zero.
      */
     @Override
     public BigDecimal getPriceResult(Route route) {
