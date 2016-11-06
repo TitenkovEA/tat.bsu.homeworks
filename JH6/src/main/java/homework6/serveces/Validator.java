@@ -19,11 +19,22 @@ public class Validator {
      */
     public static boolean validateRouteExist(Route routeForValidate) {
         List<Checkpoint> route = routeForValidate.getCheckpoints();
-        if (route.size() == 0 ||
-                route.get(0).equals(route.get(route.size() - 1))) {
-            return false;
-        } else {
-            return true;
+        for (Checkpoint point : route) {
+            if (!validateDouble(point.getX()) || !validateDouble(point.getY())) {
+                return false;
+            }
         }
+        return !(route.size() == 0 || route.get(0).equals(route.get(route.size() - 1)));
+    }
+
+    /**
+     * Validate double on infinity and NaN.
+     *
+     * @param valueForValidate - param for validate.
+     * @return - true if value not infinity or NaN, else false.
+     */
+    public static boolean validateDouble(double valueForValidate) {
+        return (!Double.valueOf(valueForValidate).isInfinite() &&
+                !Double.valueOf(valueForValidate).isNaN());
     }
 }

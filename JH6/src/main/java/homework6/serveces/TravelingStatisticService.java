@@ -38,4 +38,13 @@ public class TravelingStatisticService {
                     moveStat.getPriceResult(route));
         }
     }
+
+    /**
+     * Return list of movements.
+     *
+     * @return list of movements.
+     */
+    public List<Movement> getMovements() {
+        return movements;
+    }
 }

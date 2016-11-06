@@ -48,7 +48,7 @@ public class BusMovement extends InternalCombustionEngineMovement {
      */
     @Override
     public BigDecimal getPriceResult(Route route) {
-        Route.Traveling traveling = route.createMovement();
+        Route.Traveling traveling = route.createTraveling();
         double distance = 0.0;
         while (traveling.moveToNextPoint()) {
             distance += traveling.getDistance();
@@ -58,5 +58,14 @@ public class BusMovement extends InternalCombustionEngineMovement {
         BigDecimal generalPrice = this.getFuelPricePerLiter().multiply(BigDecimal.valueOf(litersSpent));
         BigDecimal personPrice = generalPrice.divide(BigDecimal.valueOf((long) passengerCount));
         return personPrice.setScale(2, BigDecimal.ROUND_HALF_UP);
+    }
+
+    /**
+     * Return passenger count.
+     *
+     * @return passenger count type of int.
+     */
+    public int getPassengerCount() {
+        return passengerCount;
     }
 }

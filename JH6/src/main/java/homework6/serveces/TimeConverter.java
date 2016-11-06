@@ -10,7 +10,8 @@ public class TimeConverter {
      * Convert time from long to String.
      *
      * @param timeInMs - time in ms type of long
-     * @return time in String format
+     * @return time in String format in the form of
+     * "Days: %, Hours: %, Minutes: %, Seconds: %".
      */
     public static String convertLongToTime(long timeInMs) {
         int msInDay = 86400000;
