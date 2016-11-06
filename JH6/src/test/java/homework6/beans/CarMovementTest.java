@@ -26,7 +26,8 @@ public class CarMovementTest {
     @Test
     public void positiveGetPriceResult() throws Exception {
         BigDecimal validValue = carMovement.getFuelPricePerLiter().multiply(
-                new BigDecimal(carMovement.getFuelConsumption()));
+                new BigDecimal(carMovement.getFuelConsumption())).setScale(
+                2, BigDecimal.ROUND_HALF_UP);
         assertEquals(validValue, carMovement.getPriceResult(route));
     }
 
