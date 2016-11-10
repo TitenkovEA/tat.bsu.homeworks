@@ -13,8 +13,8 @@ public class TriangleTest {
     }
 
     @Test(dataProvider = "validTriangleSides", dataProviderClass = TriangleDataProviders.class)
-    public void positiveGetTriangleTypeOfScalene(String triangleType,
-                                                 double sideA, double sideB, double sideC)
+    public void positiveGetTriangleType(String triangleType,
+                                        double sideA, double sideB, double sideC)
             throws Exception {
         Triangle triangle = new Triangle(sideA, sideB, sideC);
         assertEquals(triangle.getTriangleType(), triangleType);

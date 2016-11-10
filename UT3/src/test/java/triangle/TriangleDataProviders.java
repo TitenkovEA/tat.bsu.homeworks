@@ -28,16 +28,13 @@ public class TriangleDataProviders {
         int fullSize = scaleneTriangles.length + isoscelesTriangles.length +
                 equilateralTriangles.length;
         Object[][] result = new Object[fullSize][];
-        for (int i = 0; i < scaleneTriangles.length; i++) {
-            result[i] = scaleneTriangles[i];
-        }
-        for (int i = 0; i < isoscelesTriangles.length; i++) {
-            result[i + scaleneTriangles.length] = isoscelesTriangles[i];
-        }
-        for (int i = 0; i < equilateralTriangles.length; i++) {
-            result[i + scaleneTriangles.length +
-                    isoscelesTriangles.length] = equilateralTriangles[i];
-        }
+
+        System.arraycopy(scaleneTriangles, 0, result, 0, scaleneTriangles.length);
+        System.arraycopy(isoscelesTriangles, 0,
+                result, scaleneTriangles.length, isoscelesTriangles.length);
+        System.arraycopy(equilateralTriangles, 0,
+                result, scaleneTriangles.length + isoscelesTriangles.length,
+                equilateralTriangles.length);
 
         return result;
     }
