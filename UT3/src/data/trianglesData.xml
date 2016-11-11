@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data>
+    <triangles>
+        <negative side_a="NaN" side_b="2" side_c="3"/>
+        <negative side_a="2" side_b="NaN" side_c="3"/>
+        <negative side_a="2" side_b="3" side_c="NaN"/>
+        <negative side_a="NaN" side_b="NaN" side_c="NaN"/>
+        <negative side_a="NaN" side_b="2" side_c="NaN"/>
+        <negative side_a="NaN" side_b="NaN" side_c="2"/>
+        <negative side_a="2" side_b="NaN" side_c="NaN"/>
+        <negative side_a="Infinity" side_b="2" side_c="3"/>
+        <negative side_a="2" side_b="Infinity" side_c="3"/>
+        <negative side_a="2" side_b="3" side_c="Infinity"/>
+        <negative side_a="Infinity" side_b="Infinity" side_c="Infinity"/>
+        <negative side_a="2" side_b="Infinity" side_c="Infinity"/>
+        <negative side_a="Infinity" side_b="2" side_c="Infinity"/>
+        <negative side_a="Infinity" side_b="Infinity" side_c="2"/>
+        <negative side_a="-Infinity" side_b="2" side_c="3"/>
+        <negative side_a="2" side_b="-Infinity" side_c="3"/>
+        <negative side_a="2" side_b="3" side_c="-Infinity"/>
+        <negative side_a="-Infinity" side_b="-Infinity" side_c="-Infinity"/>
+        <negative side_a="2" side_b="-Infinity" side_c="-Infinity"/>
+        <negative side_a="-Infinity" side_b="2" side_c="-Infinity"/>
+        <negative side_a="-Infinity" side_b="-Infinity" side_c="2"/>
+        <negative side_a="0" side_b="0" side_c="0"/>
+        <negative side_a="0" side_b="0" side_c="3"/>
+        <negative side_a="0" side_b="3" side_c="0"/>
+        <negative side_a="3" side_b="0" side_c="0"/>
+        <negative side_a="0" side_b="2" side_c="3"/>
+        <negative side_a="2" side_b="0" side_c="3"/>
+        <negative side_a="3" side_b="2" side_c="0"/>
+        <negative side_a="1" side_b="1" side_c="max"/>
+        <negative side_a="1" side_b="max" side_c="1"/>
+        <negative side_a="max" side_b="1" side_c="1"/>
+        <negative side_a="min" side_b="min" side_c="1"/>
+        <negative side_a="min" side_b="1" side_c="min"/>
+        <negative side_a="1" side_b="min" side_c="min"/>
+        <negative side_a="1" side_b="1" side_c="-1"/>
+        <negative side_a="1" side_b="-1" side_c="1"/>
+        <negative side_a="-1" side_b="1" side_c="1"/>
+        <negative side_a="-1" side_b="-1" side_c="1"/>
+        <negative side_a="1" side_b="-1" side_c="-1"/>
+        <negative side_a="-1" side_b="1" side_c="-1"/>
+        <negative side_a="-1" side_b="-1" side_c="-1"/>
+        <negative side_a="20" side_b="2" side_c="4"/>
+        <negative side_a="2" side_b="20" side_c="4"/>
+        <negative side_a="2" side_b="2" side_c="40"/>
+        <negative side_a="1" side_b="2" side_c="3"/>
+        <negative side_a="3" side_b="1" side_c="2"/>
+        <negative side_a="2" side_b="3" side_c="1"/>
+        <scalene side_a="3" side_b="4" side_c="6"/>
+        <scalene side_a="6" side_b="3" side_c="4"/>
+        <scalene side_a="4" side_b="6" side_c="3"/>
+        <isosceles side_a="2" side_b="3" side_c="3"/>
+        <isosceles side_a="3" side_b="3" side_c="2"/>
+        <isosceles side_a="3" side_b="2" side_c="3"/>
+        <isosceles side_a="1" side_b="max" side_c="max"/>
+        <isosceles side_a="max" side_b="1" side_c="max"/>
+        <isosceles side_a="max" side_b="max" side_c="1"/>
+        <isosceles side_a="min" side_b="1" side_c="1"/>
+        <isosceles side_a="1" side_b="min" side_c="1"/>
+        <isosceles side_a="1" side_b="1" side_c="min"/>
+        <equilateral side_a="3" side_b="3" side_c="3"/>
+        <equilateral side_a="max" side_b="max" side_c="max"/>
+        <equilateral side_a="min" side_b="min" side_c="min"/>
+    </triangles>
+</data>
