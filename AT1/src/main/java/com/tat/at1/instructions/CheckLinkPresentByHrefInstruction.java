@@ -5,15 +5,30 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 
 /**
- * Created by Я on 19.11.2016.
+ * Represents class of CheckLinkPresentByHrefInstruction instruction.
+ *
+ * @author Eugeny Titenkov.
  */
 public class CheckLinkPresentByHrefInstruction extends AbstractInstruction {
     public static final String NAME = "checkLinkPresentByHref";
 
-    public CheckLinkPresentByHrefInstruction(String value, String id) {
-        super(value, id);
+    /**
+     * Create object of instruction with received params.
+     *
+     * @param value  - value of instruction.
+     * @param pageId - id of page, where instruction must be executed.
+     */
+    public CheckLinkPresentByHrefInstruction(String value, String pageId) {
+        super(value, pageId);
     }
 
+    /**
+     * Executes instruction.
+     * Check link exist by href.
+     *
+     * @param webDriver - driver, where instruction must be executed.
+     * @return true, if execution pass with success, else false.
+     */
     @Override
     public boolean execute(WebDriver webDriver) {
         try {
@@ -22,5 +37,21 @@ public class CheckLinkPresentByHrefInstruction extends AbstractInstruction {
             return false;
         }
         return true;
+    }
+
+    /**
+     * Returns information about instruction.
+     *
+     * @return information about instruction.
+     */
+    @Override
+    public String getInfoMessage() {
+        return "[" +
+                NAME +
+                " " +
+                this.getValue() +
+                " " +
+                this.getPageId() +
+                "]";
     }
 }

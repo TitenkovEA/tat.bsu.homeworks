@@ -10,16 +10,30 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Я on 18.11.2016.
+ * Represents class of CommandLineHandler.
+ *
+ * @author Eugeny Titenkov.
  */
-public class CommandLineHandler implements InstructionHandler {
+public class CommandLineHandler extends AbstractInstructionHandler
+        implements InstructionHandler {
     private String[] args;
 
+    /**
+     * Create object of CommandLineHandler with received params.
+     *
+     * @param args - command line args.
+     */
     public CommandLineHandler(String[] args) {
         this.args = args;
     }
 
-    public List<PageInstruction> getPageInstruction() throws IOException {
+    /**
+     * Returns list of PageInstruction objects by command line args.
+     *
+     * @return list of PageInstruction objects.
+     * @throws Exception if contains unvalid data.
+     */
+    public List<PageInstruction> getPageInstruction() throws Exception {
         List<PageInstruction> pageInstructions = new ArrayList<>();
         List<AbstractInstruction> checkInstructions = new ArrayList<>();
 
@@ -33,7 +47,7 @@ public class CommandLineHandler implements InstructionHandler {
             if (pageInstruction == null) {
                 instruction = instructionFactory.getInstruction(params);
                 if (instruction == null) {
-                    //skip
+                    throw new Exception("Unvalid data");
                 } else {
                     checkInstructions.add(instruction);
                 }
@@ -41,25 +55,15 @@ public class CommandLineHandler implements InstructionHandler {
                 pageInstructions.add(pageInstruction);
             }
         }
-
-        for (PageInstruction page : pageInstructions) {
-            String pageId = page.getId();
-            for (int i = 0; i < checkInstructions.size(); i++) {
-                if (checkInstructions.get(i).getPageId().equals(pageId)) {
-                    page.addInstruction(checkInstructions.get(i));
-                    checkInstructions.remove(i);
-                    i--;
-                }
-            }
-        }
-
-        for (AbstractInstruction lostInstraction :
-                checkInstructions) {
-            //skip
-        }
-        return pageInstructions;
+        return this.addInstructionsToPages(pageInstructions, checkInstructions);
     }
 
+    /**
+     * Returns String array of params.
+     *
+     * @param line - line to parse.
+     * @return String array of params.
+     */
     private String[] parseLine(String line) {
         String[] params = line.split("\\|");
         return params;

@@ -14,20 +14,34 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Я on 18.11.2016.
+ * Represents class of XmlHandler.
+ *
+ * @author Eugeny Titenkov.
  */
-public class XmlHandler implements InstructionHandler {
+public class XmlHandler extends AbstractInstructionHandler
+        implements InstructionHandler {
     private static final String INSTRUCTION_TAG = "instruction";
 
     private Document document;
 
+    /**
+     * Create object of XmlHandler with received params.
+     *
+     * @param filePath - path to xml file.
+     */
     public XmlHandler(String filePath) throws Exception {
         DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
         DocumentBuilder documentBuilder = builderFactory.newDocumentBuilder();
         document = documentBuilder.parse(new File(filePath));
     }
 
-    public List<PageInstruction> getPageInstruction() {
+    /**
+     * Returns list of PageInstruction objects by xml file.
+     *
+     * @return list of PageInstruction objects.
+     * @throws Exception if contains unvalid data.
+     */
+    public List<PageInstruction> getPageInstruction() throws Exception {
         List<PageInstruction> pageInstructions = new ArrayList<>();
         List<AbstractInstruction> checkInstructions = new ArrayList<>();
 
@@ -41,7 +55,7 @@ public class XmlHandler implements InstructionHandler {
             if (pageInstruction == null) {
                 instruction = instructionFactory.getInstruction(instructions.item(i));
                 if (instruction == null) {
-                    //skip
+                    throw new Exception("Unvalid data");
                 } else {
                     checkInstructions.add(instruction);
                 }
@@ -49,23 +63,6 @@ public class XmlHandler implements InstructionHandler {
                 pageInstructions.add(pageInstruction);
             }
         }
-
-        for (PageInstruction page : pageInstructions) {
-            String pageId = page.getId();
-            for (int i = 0; i < checkInstructions.size(); i++) {
-                if (checkInstructions.get(i).getPageId().equals(pageId)) {
-                    page.addInstruction(checkInstructions.get(i));
-                    checkInstructions.remove(i);
-                    i--;
-                }
-            }
-        }
-
-        for (AbstractInstruction lostInstraction :
-                checkInstructions) {
-            //skip
-        }
-
-        return pageInstructions;
+        return this.addInstructionsToPages(pageInstructions, checkInstructions);
     }
 }

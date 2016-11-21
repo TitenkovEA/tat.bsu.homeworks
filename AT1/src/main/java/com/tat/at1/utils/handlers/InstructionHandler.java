@@ -6,9 +6,17 @@ import java.io.IOException;
 import java.util.List;
 
 /**
- * Created by Я on 18.11.2016.
+ * Represents interface of InstructionHandler.
+ *
+ * @author Eugeny Titenkov.
  */
 public interface InstructionHandler {
-    List<PageInstruction> getPageInstruction() throws IOException;
+    /**
+     * Returns list of PageInstruction objects.
+     *
+     * @return list of PageInstruction objects.
+     * @throws Exception if contains unvalid data.
+     */
+    List<PageInstruction> getPageInstruction() throws Exception;
 }
 

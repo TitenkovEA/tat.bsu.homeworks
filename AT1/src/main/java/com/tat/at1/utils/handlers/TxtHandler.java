@@ -10,16 +10,30 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * Represents class of TxtHandler.
  *
+ * @author Eugeny Titenkov.
  */
-public class TxtHandler implements InstructionHandler {
+public class TxtHandler extends AbstractInstructionHandler
+        implements InstructionHandler {
     private File txtFile;
 
+    /**
+     * Create object of TxtHandler with received params.
+     *
+     * @param filePath - path to txt file.
+     */
     public TxtHandler(String filePath) {
         this.txtFile = new File(filePath);
     }
 
-    public List<PageInstruction> getPageInstruction() throws IOException {
+    /**
+     * Returns list of PageInstruction objects by txt file.
+     *
+     * @return list of PageInstruction objects.
+     * @throws Exception if contains unvalid data.
+     */
+    public List<PageInstruction> getPageInstruction() throws Exception {
         List<PageInstruction> pageInstructions = new ArrayList<>();
         List<AbstractInstruction> checkInstructions = new ArrayList<>();
 
@@ -33,7 +47,7 @@ public class TxtHandler implements InstructionHandler {
             if (pageInstruction == null) {
                 instruction = instructionFactory.getInstruction(params);
                 if (instruction == null) {
-                    //skip
+                    throw new Exception("Unvalid data");
                 } else {
                     checkInstructions.add(instruction);
                 }
@@ -41,25 +55,15 @@ public class TxtHandler implements InstructionHandler {
                 pageInstructions.add(pageInstruction);
             }
         }
-
-        for (PageInstruction page : pageInstructions) {
-            String pageId = page.getId();
-            for (int i = 0; i < checkInstructions.size(); i++) {
-                if (checkInstructions.get(i).getPageId().equals(pageId)) {
-                    page.addInstruction(checkInstructions.get(i));
-                    checkInstructions.remove(i);
-                    i--;
-                }
-            }
-        }
-
-        for (AbstractInstruction lostInstraction :
-                checkInstructions) {
-            //skip
-        }
-        return pageInstructions;
+        return this.addInstructionsToPages(pageInstructions, checkInstructions);
     }
 
+    /**
+     * Read txt file.
+     *
+     * @return txt file in String array.
+     * @throws IOException if file can't be read.
+     */
     private String[] readFile() throws IOException {
         StringBuilder fileData = new StringBuilder();
         BufferedReader reader = new BufferedReader(new FileReader(txtFile));
@@ -74,6 +78,12 @@ public class TxtHandler implements InstructionHandler {
         return fileData.toString().split(System.lineSeparator());
     }
 
+    /**
+     * Returns String array of params.
+     *
+     * @param line - line to parse.
+     * @return String array of params.
+     */
     private String[] parseLine(String line) {
         String[] params = line.split("\\s\"|\"\\s\"");
         for (int i = 0; i < params.length; i++) {

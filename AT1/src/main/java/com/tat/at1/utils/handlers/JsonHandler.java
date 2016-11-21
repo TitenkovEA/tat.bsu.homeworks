@@ -9,19 +9,26 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
 import java.io.FileReader;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
 /**
- * Created by Я on 18.11.2016.
+ * Represents class of JsonHandler.
+ *
+ * @author Eugeny Titenkov.
  */
-public class JsonHandler implements InstructionHandler {
-    private static final String INSTRUCTIOON_OBJECT_NAME = "instructions";
+public class JsonHandler extends AbstractInstructionHandler
+        implements InstructionHandler {
+    private static final String INSTRUCTION_OBJECT_NAME = "instructions";
 
     private JSONObject jsonObject;
 
+    /**
+     * Create object of JsonHandler with received params.
+     *
+     * @param filePath - path to json file.
+     */
     public JsonHandler(String filePath) throws Exception {
         FileReader reader = new FileReader(filePath);
 
@@ -29,7 +36,13 @@ public class JsonHandler implements InstructionHandler {
         this.jsonObject = (JSONObject) jsonParser.parse(reader);
     }
 
-    public List<PageInstruction> getPageInstruction() {
+    /**
+     * Returns list of PageInstruction objects by json file.
+     *
+     * @return list of PageInstruction objects.
+     * @throws Exception if contains unvalid data.
+     */
+    public List<PageInstruction> getPageInstruction() throws Exception {
         List<PageInstruction> pageInstructions = new ArrayList<>();
         List<AbstractInstruction> checkInstructions = new ArrayList<>();
 
@@ -37,7 +50,7 @@ public class JsonHandler implements InstructionHandler {
         AbstractInstruction instruction;
         InstructionsFactory instructionFactory = new InstructionsFactory();
         PageInstructionBuilder pageInstructionBuilder = new PageInstructionBuilder();
-        JSONArray lang = (JSONArray) jsonObject.get(INSTRUCTIOON_OBJECT_NAME);
+        JSONArray lang = (JSONArray) jsonObject.get(INSTRUCTION_OBJECT_NAME);
         Iterator iterator = lang.iterator();
         while (iterator.hasNext()) {
             JSONObject innerObj = (JSONObject) iterator.next();
@@ -45,7 +58,7 @@ public class JsonHandler implements InstructionHandler {
             if (pageInstruction == null) {
                 instruction = instructionFactory.getInstruction(innerObj);
                 if (instruction == null) {
-                    //skip
+                    throw new Exception("Unvalid data");
                 } else {
                     checkInstructions.add(instruction);
                 }
@@ -53,23 +66,6 @@ public class JsonHandler implements InstructionHandler {
                 pageInstructions.add(pageInstruction);
             }
         }
-
-        for (PageInstruction page : pageInstructions) {
-            String pageId = page.getId();
-            for (int i = 0; i < checkInstructions.size(); i++) {
-                if (checkInstructions.get(i).getPageId().equals(pageId)) {
-                    page.addInstruction(checkInstructions.get(i));
-                    checkInstructions.remove(i);
-                    i--;
-                }
-            }
-        }
-
-        for (AbstractInstruction lostInstraction :
-                checkInstructions) {
-            //skip
-        }
-
-        return pageInstructions;
+        return this.addInstructionsToPages(pageInstructions, checkInstructions);
     }
 }

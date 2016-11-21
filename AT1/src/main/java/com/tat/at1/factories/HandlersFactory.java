@@ -3,9 +3,20 @@ package com.tat.at1.factories;
 import com.tat.at1.utils.handlers.*;
 
 /**
- * Created by Я on 18.11.2016.
+ * Represents factory of InstructionHandler.
+ * Allows get InstructionHandler.
+ *
+ * @author Eugeny Titenkov.
  */
 public class HandlersFactory {
+    /**
+     * Allows get InstructionHandler by array of String,
+     * for example by command line args.
+     *
+     * @param args - array of String.
+     * @return object type of InstructionHandler.
+     * @throws Exception if some object can't be created.
+     */
     public InstructionHandler getHeandler(String[] args) throws Exception {
         if (args.length == 1) {
             if (args[0].matches(".+.txt")) {
