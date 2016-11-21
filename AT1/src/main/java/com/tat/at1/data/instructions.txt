@@ -1,0 +1,6 @@
+open "http://www.tut.by" "3" "tut"
+open "http://www.google.com" "3" "goo"
+checkLinkPresentByName "btnK" "tut"
+checkLinkPresentByHref "https://mail.google.com/mail/?tab=wm" "tut"
+checkPageTitle "Google" "goo"
+checkPageContains "Google" "goo"

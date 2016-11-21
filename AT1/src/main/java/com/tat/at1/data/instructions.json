@@ -1,0 +1,36 @@
+{
+  "instructions": [
+    {
+      "name": "open",
+      "url": "http://www.tut.by",
+      "timeout": "3",
+      "id": "tut"
+    },
+    {
+      "name": "open",
+      "url": "http://www.google.com",
+      "timeout": "3",
+      "id": "goo"
+    },
+    {
+      "name": "checkLinkPresentByName",
+      "value": "btnK",
+      "page_id": "tut"
+    },
+    {
+      "name": "checkLinkPresentByHref",
+      "value": "https://mail.google.com/mail/?tab=wm",
+      "page_id": "tut"
+    },
+    {
+      "name": "checkPageTitle",
+      "value": "Google",
+      "page_id": "goo"
+    },
+    {
+      "name": "checkPageContains",
+      "value": "Google",
+      "page_id": "goo"
+    }
+  ]
+}
