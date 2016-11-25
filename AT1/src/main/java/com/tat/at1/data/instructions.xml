@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data>
+    <instructions>
+        <instruction name="open" url="http://www.tut.by" timeout="3" id="tut"/>
+        <instruction name="open" url="http://www.google.com" timeout="3" id="goo"/>
+        <instruction name="checkLinkPresentByName" value="btnK" page_id="tut"/>
+        <instruction name="checkLinkPresentByHref" value="https://mail.google.com/mail/?tab=wm" page_id="tut"/>
+        <instruction name="checkPageTitle" value="Google" page_id="goo"/>
+        <instruction name="checkPageContains" value="Google" page_id="goo"/>
+    </instructions>
+</data>
