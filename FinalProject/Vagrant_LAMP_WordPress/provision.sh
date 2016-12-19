@@ -7,7 +7,7 @@ xdebug_config_file="/etc/php5/mods-available/xdebug.ini"
 mysql_config_file="/etc/mysql/my.cnf"
 default_apache_index="/var/www/html/index.html"
 wordpress_username="wordpress_user"
-wordpress_password="password"
+wordpress_password="id"
 wordpress_database="wordpress"
 wordpress_debug="true"
 wordpress_database_dumped="wordpress.dump.sql"
@@ -111,15 +111,15 @@ EOF
 
 mysql_go() {
 	# Install MySQL
-	echo "mysql-server mysql-server/root_password password root" | debconf-set-selections
-	echo "mysql-server mysql-server/root_password_again password root" | debconf-set-selections
+	echo "mysql-server mysql-server/root_password id root" | debconf-set-selections
+	echo "mysql-server mysql-server/root_password_again id root" | debconf-set-selections
 	apt-get -y install mysql-client mysql-server
 
 	sed -i "s/bind-address\s*=\s*127.0.0.1/bind-address = 0.0.0.0/" ${mysql_config_file}
 
 	# Allow root access from any host
-	echo "GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'root' WITH GRANT OPTION" | mysql -u root --password=root
-	echo "GRANT PROXY ON ''@'' TO 'root'@'%' WITH GRANT OPTION" | mysql -u root --password=root
+	echo "GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'root' WITH GRANT OPTION" | mysql -u root --id=root
+	echo "GRANT PROXY ON ''@'' TO 'root'@'%' WITH GRANT OPTION" | mysql -u root --id=root
 
 	service mysql restart
 	update-rc.d apache2 enable
@@ -135,7 +135,7 @@ extract_wordpress_to_var_www_html_directory() {
 }
 
 create_database_in_mysql() {
-    mysql -u root --password=root <<EOF
+    mysql -u root --id=root <<EOF
 CREATE DATABASE IF NOT EXISTS ${wordpress_database};
 GRANT ALL PRIVILEGES ON ${wordpress_database}.* TO "${wordpress_username}"@"localhost" IDENTIFIED BY "${wordpress_password}";
 FLUSH PRIVILEGES;

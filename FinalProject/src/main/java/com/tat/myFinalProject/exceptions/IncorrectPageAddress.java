@@ -1,7 +1,10 @@
 package com.tat.myFinalProject.exceptions;
 
 /**
- * Created by Я on 05.12.2016.
+ * IncorrectPageAddress exception, heir of runtime exception.
+ * For throwing, when the page have incorrect address.
+ *
+ * @author Evgeniy Titenkov.
  */
 public class IncorrectPageAddress extends RuntimeException {
     public IncorrectPageAddress() {
