@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="WordPress_Tests">
+    <test name="Tests_on_ChromeDriver" preserve-order="true">
+        <classes>
+            <class name="com.tat.myFinalProject.pageTests.testInChrome.LoginPageTest">
+            </class>
+            <class name="com.tat.myFinalProject.pageTests.testInChrome.MainPageTest">
+            </class>
+            <class name="com.tat.myFinalProject.pageTests.testInChrome.SearchPageTest">
+            </class>
+            <class name="com.tat.myFinalProject.pageTests.testInChrome.ArchivePageTest">
+            </class>
+            <class name="com.tat.myFinalProject.pageTests.testInChrome.CategoryPageTest">
+            </class>
+            <class name="com.tat.myFinalProject.pageTests.testInChrome.PostPageTest">
+            </class>
+        </classes>
+    </test>
+    <test name="Tests_on_InternetExplorer" preserve-order="true">
+        <classes>
+            <class name="com.tat.myFinalProject.pageTests.testInInternetExplorer.LoginPageTest">
+            </class>
+            <class name="com.tat.myFinalProject.pageTests.testInInternetExplorer.MainPageTest">
+            </class>
+            <class name="com.tat.myFinalProject.pageTests.testInInternetExplorer.SearchPageTest">
+            </class>
+            <class name="com.tat.myFinalProject.pageTests.testInInternetExplorer.ArchivePageTest">
+            </class>
+            <class name="com.tat.myFinalProject.pageTests.testInInternetExplorer.CategoryPageTest">
+            </class>
+            <class name="com.tat.myFinalProject.pageTests.testInInternetExplorer.PostPageTest">
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -23,15 +23,6 @@ Requirements
 Usage
 -----
 
-### Startup
-	$ git clone http://www.github.com/nhsalpha/vagrant-lamp-wordpress
-	$ cd vagrant-lamp-wordpress
-	$ vagrant up
-
-That is pretty simple.
-
-### Connecting
-
 #### Wordpress
 
 The Wordpress instance (running on Apache) is available at [http://localhost:8888](http://localhost:8888)
@@ -46,7 +37,7 @@ Username: root
 Password: root
 
 #### Database import
-If you want to import existing database, file to import can be set in `provision.sh` in `wordpress_database_dumped` variable. By default, it's `wordpress.sql`
+If you want to import existing database, file to import can be set in `provision.sh` in `wordpress_database_dumped` variable. By default, it's `wordpress.dump.sql`
 
 Technical Details
 -----------------
